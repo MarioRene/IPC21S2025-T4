@@ -1,0 +1,57 @@
+#Paradigma Procedural
+##Diagrama de Clases
+En este caso, no se realiza un diagrama de clases porque el programa sigue el paradigma procedural, el cual no utiliza clases ni objetos.
+
+##Diagrama de Actividades
+
+1.	Inicio
+2.	Solicitar al usuario el numerador y denominador
+3.	Calcular el MCD (Algoritmo de Euclides)
+4.	Dividir numerador y denominador por el MCD
+5.	Mostrar la fracción simplificada
+6.	Fin
+
+Inicio
+│
+▼
+Solicitar numerador y denominador
+│
+▼
+Calcular MCD
+│
+▼
+Dividir numerador y denominador por MCD
+│
+▼
+Mostrar fracción simplificada
+│
+▼
+Fin
+
+##Pseudocódigo
+INICIO
+FUNCION MCD(a, b)
+    MIENTRAS b ≠ 0 HACER
+        temp ← a
+        a ← b
+        b ← temp MOD b
+    FIN MIENTRAS
+    RETORNAR a
+FIN FUNCION
+
+FUNCION simplificar_fraccion(numerador, denominador)
+    divisor ← MCD(numerador, denominador)
+    RETORNAR (numerador / divisor, denominador / divisor)
+FIN FUNCION
+
+FUNCION main()
+    ESCRIBIR "Ingresa el numerador: "
+    LEER numerador
+    ESCRIBIR "Ingresa el denominador: "
+    LEER denominador
+    (numerador_simplificado, denominador_simplificado) ← simplificar_fraccion(numerador, denominador)
+    ESCRIBIR "La fracción simplificada es: " + numerador_simplificado + "/" + denominador_simplificado
+FIN FUNCION
+
+main()
+FIN
