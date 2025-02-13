@@ -12,7 +12,7 @@
 | + __str__(): str       |
 +------------------------+
 
-Diagrama de Actividades
+##Diagrama de Actividades
 
 1.	Inicio
 2.	Solicitar al usuario el numerador y denominador
