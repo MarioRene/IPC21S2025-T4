@@ -1,17 +1,26 @@
-********* Lista circular*********
+********* ListaCircular *********
 ---------------------------------
 atributos
--ObjInicio: Nodo
+- ptrInicio: Nodo
+- numeroElementos: entero
 ---------------------------------
 metodos
-+RecorrerLista()
++ insertar (p_objElemento: Nodo)
++ insertar (p_posicion: entero,
+  p_objElemento: Nodo)
++ eliminar (p_objElemento: Nodo)
++ buscar (p_objElemento: Nodo)
++ cantidadElementos () : entero
++ recorrerLista ()
 ---------------------------------
-              .
-              .
-              .
-              .
+              |
+              |  
               v
 ********** Nodo *************
 atributos
--ptrSig: puntero
-----------------------------
+- ptrSig: Nodo
+------------------------------
+metodos
++ devolverSig () : Nodo
++ asignarSig (p_ptr: Nodo)
+------------------------------
