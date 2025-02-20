@@ -1,3 +1,6 @@
+DIAGRAMA DE CLASES
+
+
 ********* ListaCircular *********
 ---------------------------------
 atributos
@@ -24,3 +27,119 @@ metodos
 + devolverSig () : Nodo
 + asignarSig (p_ptr: Nodo)
 ------------------------------
+
+
+
+
+
+
+
+
+
+DIAGRAMA DE ACTIVIDADES
+
+
+
+⬤ Pseudo-estado inicial
+        |
+        v
+---------------------------------
+|    objNodoActual = objInicio  |
+---------------------------------
+        |
+        v
+---------------------------------
+|   ¿objNodoActual == NULL?     |
+---------------------------------
+      |                                      |
+      Sí           BIFURCACION               No
+      |                                      |
+      v                                      v
+----------------------------     -----------------------------------------------
+|  Imprimir "Lista vacía"  |    |  Mientras (objNodoActual != objInicio):       |
+----------------------------    |                                               |
+      |                         |  objNodoActual.mostrarEstado()                |
+      v                         |  objNodoActual = objNodoActual.devolverSig()  |
+  ⬤ Pseudo-estado final         -----------------------------------------------
+
+                                                  |
+                                                  v
+                                ---------------------------------
+                                | ¿objNodoActual == objInicio? |
+                                ---------------------------------
+                                      |                                          |
+                                      Sí           BIFURCACION                   No
+                                      |                                          |
+                                      v                                          v
+                                ----------------------------               -----------------------------
+                            |  Imprimir "Regresando al inicio" |              |    Repetir ciclo   |
+                                ----------------------------                -----------------------------
+                                        |
+                                        v
+                                  ⬤ Pseudo-estado final
+
+
+Flujo del Método recorrerLista
+
+                                       1.Inicio del Proceso:
+estado inicial: El proceso comienza aquí. Es el punto de partida del método.
+
+
+                                      2.Asignación del Nodo Actual:
+Acción: objNodoActual = objInicio
+Descripción: Se inicializa la variable objNodoActual con el nodo que representa el inicio de la lista circular. Esto significa que comenzaremos a recorrer la lista desde este nodo.
+
+
+                                      3.Verificación de Lista Vacía:
+Decisión: ¿objNodoActual == NULL?
+Descripción: Aquí se verifica si la lista está vacía. Si objNodoActual es NULL, significa que no hay nodos en la lista.
+Si la respuesta es "Sí":
+Acción: Imprimir "Lista vacía"
+Descripción: Se informa al usuario que la lista está vacía. Después de esto, el flujo termina en un pseudo-estado final, indicando que no hay más acciones que realizar.
+Si la respuesta es "No":
+Acción: Se procede a un bucle para recorrer la lista.
+Descripción: Esto significa que hay al menos un nodo en la lista, y comenzaremos a recorrerla.
+
+
+
+
+                                      4. Inicio del Bucle de Recorrido:
+Acción: Mientras (objNodoActual != objInicio)
+Descripción: Este bucle se ejecuta mientras objNodoActual no haya vuelto al nodo inicial. Esto es crucial en una lista circular para evitar un bucle infinito.
+
+
+
+                                      5. Mostrar Estado del Nodo Actual:
+Acción: objNodoActual.mostrarEstado()
+Descripción: Se llama a un método (o función) que muestra el estado o los datos del nodo actual. Esto permite al usuario ver la información contenida en cada nodo a medida que se recorre la lista.
+                                      
+
+
+
+
+                                      6. Avanzar al Siguiente Nodo:
+Acción: objNodoActual = objNodoActual.devolverSig()
+Descripción: Se actualiza objNodoActual para que apunte al siguiente nodo en la lista. Esto es esencial para continuar el recorrido.
+
+
+
+
+                                      7.  Verificación de Fin del Recorrido:
+Decisión: ¿objNodoActual == objInicio?
+Descripción: Después de avanzar al siguiente nodo, se verifica si objNodoActual ha vuelto al nodo inicial.
+Si la respuesta es "Sí":
+Acción: Imprimir "Regresando al inicio"
+Descripción: Se informa al usuario que se ha completado el recorrido y que se está regresando al nodo inicial. Esto es útil para indicar que el recorrido ha terminado.
+Si la respuesta es "No":
+Acción: Repetir ciclo
+Descripción: Si objNodoActual no ha vuelto al nodo inicial, se repite el ciclo, volviendo a mostrar el estado del nodo actual y avanzando al siguiente nodo.
+
+
+
+
+
+                                                    8. Fin del Proceso:
+estado final: Una vez que se ha regresado al nodo inicial y se ha impreso el mensaje correspondiente, el flujo termina aquí.
+
+
+
